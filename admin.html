@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Yoonjae Lee Portfolio Admin" />
+    <title>Admin | Yoonjae Lee</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .admin-wrap {
+        padding: 42px 0 64px;
+      }
+      .admin-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        align-items: start;
+      }
+      .admin-title {
+        font-size: 26px;
+        font-weight: 950;
+        letter-spacing: -0.5px;
+      }
+      .admin-sub {
+        margin-top: 6px;
+        color: var(--muted);
+        font-weight: 650;
+        font-size: 13.5px;
+      }
+      .row {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 14px;
+      }
+      .list-item {
+        padding: 14px 14px;
+        border-radius: var(--radius);
+        border: 1px solid rgba(15, 23, 42, 0.10);
+        background: var(--card);
+        box-shadow: 0 10px 30px rgba(2, 6, 23, 0.05);
+      }
+      [data-theme="dark"] .list-item {
+        border-color: rgba(229, 231, 235, 0.12);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      }
+      .list-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .list-title {
+        font-weight: 950;
+        letter-spacing: -0.3px;
+      }
+      .list-meta {
+        margin-top: 6px;
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        color: var(--muted);
+        font-weight: 800;
+        font-size: 12.5px;
+      }
+      .admin-actions {
+        margin-top: 14px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      .danger-btn {
+        border: 1px solid rgba(239, 68, 68, 0.30);
+        background: rgba(239, 68, 68, 0.10);
+        color: var(--text);
+      }
+      .danger-btn:hover {
+        border-color: rgba(239, 68, 68, 0.50);
+        background: rgba(239, 68, 68, 0.16);
+      }
+      .field-line {
+        display: flex;
+        gap: 10px;
+      }
+      @media (max-width: 980px) {
+        .admin-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand" aria-label="관리자">
+          <div class="brand-mark" aria-hidden="true">YL</div>
+          <div class="brand-text">
+            <div class="brand-name">Admin</div>
+            <div class="brand-role">Portfolio 프로젝트 관리</div>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button id="logoutBtn" class="icon-btn" type="button" aria-label="관리자 로그아웃">
+            <span class="icon" aria-hidden="true">⟲</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container admin-wrap" id="adminMain">
+      <div id="authView" class="form-card" style="max-width: 720px; margin: 0 auto;">
+        <div class="admin-title">관리자 비밀번호</div>
+        <div class="admin-sub">비밀번호는 `admin.js`에서 설정한 값과 일치해야 해요.</div>
+
+        <form id="authForm" style="margin-top: 18px;">
+          <label class="field">
+            <span class="field-label">비밀번호</span>
+            <input id="adminPassword" class="input" type="password" placeholder="비밀번호 입력" required />
+          </label>
+          <div class="admin-actions">
+            <button class="btn btn-primary" type="submit">입장</button>
+          </div>
+        </form>
+        <div id="authError" class="form-hint" style="margin-top: 10px; min-height: 18px;"></div>
+      </div>
+
+      <div id="adminView" class="hidden" aria-hidden="true">
+        <div class="admin-grid">
+          <div class="form-card">
+            <h3 class="about-title">프로젝트 저장/수정</h3>
+            <p class="form-hint" style="margin-top: 6px;">
+              태그는 `ux`, `ui`, `prototype`, `system` 중에서 쉼표 또는 공백으로 입력해주세요.
+            </p>
+
+            <form id="projectForm" style="margin-top: 14px;">
+              <label class="field">
+                <span class="field-label">제목</span>
+                <input id="pTitle" class="input" type="text" placeholder="예: 스마트 장바구니 UX 개선" required />
+              </label>
+
+              <div class="field-line" style="margin-top: 12px;">
+                <label class="field" style="flex: 1;">
+                  <span class="field-label">년도</span>
+                  <input id="pYear" class="input" type="text" inputmode="numeric" placeholder="예: 2025" required />
+                </label>
+                <label class="field" style="flex: 1;">
+                  <span class="field-label">태그</span>
+                  <input id="pTags" class="input" type="text" placeholder="예: ux, ui, prototype" required />
+                </label>
+              </div>
+
+              <label class="field" style="margin-top: 12px;">
+                <span class="field-label">역할</span>
+                <input id="pRole" class="input" type="text" placeholder="예: 리서치/플로우 설계/프로토타입" required />
+              </label>
+
+              <label class="field" style="margin-top: 12px;">
+                <span class="field-label">도구</span>
+                <input id="pTools" class="input" type="text" placeholder="예: Figma, FigJam" required />
+              </label>
+
+              <label class="field" style="margin-top: 12px;">
+                <span class="field-label">요약(카드 설명)</span>
+                <textarea id="pSummary" class="textarea" rows="4" placeholder="프로젝트 한 줄 요약을 적어주세요." required></textarea>
+              </label>
+
+              <label class="field" style="margin-top: 12px;">
+                <span class="field-label">하이라이트(쉼표로 구분)</span>
+                <textarea id="pHighlights" class="textarea" rows="3" placeholder="예: 결제 직전 이탈 지점 식별, 핵심 혜택 카드 구조화, 단계별 피드백" required></textarea>
+              </label>
+
+              <label class="field" style="margin-top: 12px;">
+                <span class="field-label">포인트 컬러(HEX)</span>
+                <input id="pAccent" class="input" type="text" placeholder="예: #7c3aed" required />
+              </label>
+
+              <div class="admin-actions">
+                <button id="resetBtn" class="btn btn-ghost" type="button" title="편집 중인 항목 선택을 해제하고 새로 입력합니다.">
+                  선택 해제
+                </button>
+                <button id="saveBtn" class="btn btn-primary" type="submit">저장</button>
+              </div>
+
+              <div class="admin-actions" style="justify-content: flex-start;">
+                <button id="deleteAllBtn" class="btn btn-ghost danger-btn" type="button">
+                  모든 프로젝트 삭제
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="about-card">
+            <h3 class="about-title">저장된 프로젝트</h3>
+            <p class="form-hint" style="margin-top: 6px;">
+              저장하면 메인 페이지는(다른 탭에서) 자동으로 갱신돼요. 같은 탭이면 새로고침해주세요.
+            </p>
+            <div id="projectList" class="list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="adminToast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="admin.js" defer></script>
+  </body>
+</html>
+
