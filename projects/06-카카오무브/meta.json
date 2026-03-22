@@ -1,0 +1,12 @@
+{
+  "title": "카카오 무브,이동과 함께 즐기는 나만의 콘텐츠",
+  "year": "2025",
+  "role": "UX Research / UI Design",
+  "tools": "Figma, photoshop, cinema4D,",
+  "tags": ["UX", "UI", "지도"],
+  "summary": "카카오 무브는 이동과 함께 즐기는 나만의 콘텐츠를 제공하는 서비스입니다. 이동을 통해 콘텐츠를 탐색하고, 콘텐츠를 통해 이동을 즐길 수 있습니다.",
+  "accent": "#fbbf24",
+  "accent2": "#f97316",
+  "thumbnail": "1.png",
+  "slides": ["2.png", "3.png", "4.png", "5.png"]
+}

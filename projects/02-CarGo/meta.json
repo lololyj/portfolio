@@ -1,0 +1,12 @@
+{
+  "title": "CarGo,트럭커를 위한 차량 인터페이스",
+  "year": "2024",
+  "role": "UX Research / UI Design",
+  "tools": "Figma, FigJam",
+  "tags": ["UX", "UI","모빌리티", "차량 인포테인먼트"],
+  "summary": "트럭 운전자를 위한 차량 인터페이스인 ‘카고’는 5톤이상 화물차에 적용되어 실시간으로 차량과  화물에 대한 정보를 보여주고, 운전자의 컨디션을 관리하며 이를 바탕으로 운전자가 안전하게 업무를 마칠 수 있도록 보조하는 서비스 입니다.",
+  "accent": "#2563eb",
+  "accent2": "#06b6d4",
+  "thumbnail": "1.png",
+  "slides": ["2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png", "10.png"]
+}

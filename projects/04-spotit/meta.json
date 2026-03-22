@@ -1,0 +1,12 @@
+{
+  "title": "Spot it — 플리마켓 큐레이션 플랫폼",
+  "year": "2025",
+  "role": "Product Design / Design System",
+  "tools": "Figma, FigJam, Zeplin",
+  "tags": ["Product", "UI", "Design System"],
+  "summary": "IT 사이드 프로젝트 동아리 'JECT' 활동. 플리마켓 정보를 큐레이션하여 제공하는 모바일 플랫폼의 프로덕트 디자이너로 참여, 디자인 시스템 구축 및 전체 UI를 설계했습니다.",
+  "accent": "#8b5cf6",
+  "accent2": "#ec4899",
+  "thumbnail": "thumbnail.png",
+  "slides": ["slide-1.png", "slide-2.png", "slide-3.png"]
+}

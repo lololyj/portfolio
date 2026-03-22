@@ -1,0 +1,14 @@
+{
+  "title": "셀릿,빠르고 안전한 자율주행 모빌리티 중고거래",
+  "year": "2023",
+  "role": "UX Research / UI Design / 3D 모델링 / 프로모션 영상 제작",
+  "tools": "Figma, photoshop, cinema4D, After effect",
+  "tags": ["UX", "UI","모빌리티","중고거래"],
+  "summary": "최근 중고거래 시장이 성장하면서 사기 피해와 개인정보 노출 위험도 늘어나고 있습니다. 셀릿은 무인 모빌리티 기술을 활용해 안전하고 간편한 중고 거래를 돕는 서비스입니다. 개인정보 걱정 없이 원하는 상품을 편리하게 사고팔 수 있는 새로운 방식, 이제 셀릿과 함께 경험해보세요.",
+  "accent": "#8b5cf6",
+  "accent2": "#ec4899",
+  "thumbnail": "1.png",
+  "slides": ["2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png", "10.png", "11.png",  "12.png", "13.png"],
+   "vimeo": "https://vimeo.com/897506609",
+"videoPosition": "bottom"
+}
