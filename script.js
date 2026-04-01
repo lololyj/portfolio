@@ -199,8 +199,11 @@ function openProjectModal(proj) {
   }
 
   const thumbUrl = projImgUrl(proj, proj.thumbnail);
+  const demoBtn = proj.demoLink
+    ? `<a class="demo-link-btn" href="${proj.demoLink}" target="_blank" rel="noopener">🔗 프로토타입 보기</a>`
+    : '';
   const thumbHtml = thumbUrl
-    ? `<div class="modal-thumb"><img src="${thumbUrl}" alt="${proj.title}"></div>`
+    ? `<div class="modal-thumb">${demoBtn}<img src="${thumbUrl}" alt="${proj.title}"></div>`
     : `<div class="modal-thumb-placeholder" style="--mc1:${proj.accent};--mc2:${proj.accent2 || '#06b6d4'}"></div>`;
 
   const tagsHtml = (proj.tags || []).map(t => `<span class="proj-tag">${t}</span>`).join('');
@@ -217,7 +220,14 @@ function openProjectModal(proj) {
   const slideUrls = (proj.slides || []).map(s => projImgUrl(proj, s));
   const slidesHtml = slideUrls.length > 0
     ? `<div class="slides-title">Project Slides (${slideUrls.length})</div>
-       <div class="slides-list">${slideUrls.map((s, i) => `<img class="slide-img" src="${s}" alt="Slide ${i+1}" loading="lazy">`).join('')}</div>`
+       <div class="slides-list">${(proj.slides || []).map((s, i) => {
+         const url = projImgUrl(proj, s);
+         const link = proj.slideLinks?.[s];
+         const btn = link ? `<a class="demo-link-btn slide-demo-btn" href="${link}" target="_blank" rel="noopener">🔗 프로토타입 보기</a>` : '';
+         return link
+           ? `<div class="slide-img-wrap">${btn}<img class="slide-img" src="${url}" alt="Slide ${i+1}" loading="lazy"></div>`
+           : `<img class="slide-img" src="${url}" alt="Slide ${i+1}" loading="lazy">`;
+       }).join('')}</div>`
     : '';
 
   overlay.innerHTML = `

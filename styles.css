@@ -955,7 +955,28 @@ body.cursor-click #cursor-ring { transform: translate(-50%,-50%) scale(0.85); }
   overflow: hidden;
   margin-bottom: 56px;
   border: 1px solid var(--border);
+  position: relative;
 }
+.demo-link-btn {
+  position: absolute;
+  bottom: 14%;
+  left: 8%;
+  z-index: 10;
+  background: #fff;
+  color: #167AD8;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.2s;
+  cursor: none;
+}
+.demo-link-btn:hover { opacity: 0.85; transform: scale(1.04); }
+.slide-img-wrap { position: relative; }
+.slide-img-wrap .slide-img { width: 100%; display: block; }
+.slide-demo-btn { bottom: auto; left: auto; top: 20px; right: 20px; background: #167AD8; color: #fff; }
 .modal-thumb img { width: 100%; height: auto; display: block; }
 .modal-thumb-placeholder {
   width: 100%;

@@ -1,0 +1,14 @@
+{
+  "title": "hiworks.com 랜딩페이지 리뉴얼",
+  "year": "2026",
+  "role": "UX Research / UI Design",
+  "tools": "Figma, Figma Make, Cinema4D, firefly",
+  "tags": ["UX", "UI", "웹디자인"],
+  "summary": "가비아 인턴십의 핵심 프로젝트로, 하이웍스의 AX(AI Transformation) 전환에 발맞춰 기존의 친근한 이미지에서 기술적 전문성이 강조된 새로운 브랜딩으로 랜딩페이지를 리뉴얼했습니다.",
+  "accent": "#0ea5e9",
+  "accent2": "#0d9488",
+  "demoLink": "https://neon-rate-80438164.figma.site/",
+  "slideLinks": { "12.png": "https://neon-rate-80438164.figma.site/" },
+  "thumbnail": "1.png",
+  "slides": ["2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png", "10.png", "11.png", "12.png", "13.png"]
+}
