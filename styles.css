@@ -959,8 +959,8 @@ body.cursor-click #cursor-ring { transform: translate(-50%,-50%) scale(0.85); }
 }
 .demo-link-btn {
   position: absolute;
-  bottom: 14%;
-  left: 8%;
+  bottom: calc(14% + 224px);
+  left: calc(8% - 20px);
   z-index: 10;
   background: #fff;
   color: #167AD8;
@@ -1055,9 +1055,8 @@ body.cursor-click #cursor-ring { transform: translate(-50%,-50%) scale(0.85); }
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
   display: block;
-  transition: transform 0.4s;
 }
-.slide-img:hover { transform: scale(1.01); }
+.slide-img:hover { transform: none; }
 
 /* === Admin page base reset === */
 .admin-page body { cursor: default; }
