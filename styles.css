@@ -978,6 +978,14 @@ body.cursor-click #cursor-ring { transform: translate(-50%,-50%) scale(0.85); }
 .slide-img-wrap .slide-img { width: 100%; display: block; }
 .slide-demo-btn { bottom: auto; left: auto; top: 20px; right: 20px; background: #167AD8; color: #fff; }
 .modal-thumb img { width: 100%; height: auto; display: block; }
+.modal-thumb-hotspot {
+  position: absolute;
+  top: 58%;
+  height: 7%;
+  cursor: pointer;
+}
+.modal-thumb-hotspot--appstore { left: 21%; width: 13%; }
+.modal-thumb-hotspot--vimeo   { left: 8%;  width: 12%; }
 .modal-thumb-placeholder {
   width: 100%;
   aspect-ratio: 16/9;
@@ -1049,7 +1057,7 @@ body.cursor-click #cursor-ring { transform: translate(-50%,-50%) scale(0.85); }
   padding-bottom: 16px;
   border-bottom: 1px solid var(--border);
 }
-.slides-list { display: flex; flex-direction: column; gap: 20px; }
+.slides-list { display: flex; flex-direction: column; gap: 20px; margin-bottom: 40px; }
 .slide-img {
   width: 100%;
   border-radius: var(--radius-sm);

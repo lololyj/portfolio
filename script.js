@@ -2,6 +2,10 @@
    Yoonjae Lee Portfolio — script.js
    =================================================== */
 
+/* ── Always start at top on page load ── */
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
+
 /* ── IndexedDB ── */
 const IDB_NAME = 'yj-portfolio';
 const IDB_STORE = 'projects';
@@ -202,8 +206,16 @@ function openProjectModal(proj) {
   const demoBtn = proj.demoLink
     ? `<a class="demo-link-btn" href="${proj.demoLink}" target="_blank" rel="noopener">🔗 프로토타입 보기</a>`
     : '';
+  const thumbImgTag = thumbUrl ? `<img src="${thumbUrl}" alt="${proj.title}">` : '';
+  const appStoreHotspot = proj.appStoreLink && thumbUrl
+    ? `<a href="${proj.appStoreLink}" target="_blank" rel="noopener" class="modal-thumb-hotspot modal-thumb-hotspot--appstore"></a>`
+    : '';
+  const vimeoId = proj.vimeo?.match(/vimeo\.com\/(\d+)/)?.[1];
+  const vimeoHotspot = vimeoId && thumbUrl
+    ? `<a href="https://vimeo.com/${vimeoId}" target="_blank" rel="noopener" class="modal-thumb-hotspot modal-thumb-hotspot--vimeo"></a>`
+    : '';
   const thumbHtml = thumbUrl
-    ? `<div class="modal-thumb">${demoBtn}<img src="${thumbUrl}" alt="${proj.title}"></div>`
+    ? `<div class="modal-thumb">${demoBtn}${thumbImgTag}${appStoreHotspot}${vimeoHotspot}</div>`
     : `<div class="modal-thumb-placeholder" style="--mc1:${proj.accent};--mc2:${proj.accent2 || '#06b6d4'}"></div>`;
 
   const tagsHtml = (proj.tags || []).map(t => `<span class="proj-tag">${t}</span>`).join('');
@@ -245,6 +257,7 @@ function openProjectModal(proj) {
       ${proj.videoPosition === 'bottom' ? slidesHtml + vimeoHtml : vimeoHtml + slidesHtml}
     </div>`;
 
+  overlay.scrollTop = 0;
   requestAnimationFrame(() => overlay.classList.add('open'));
   document.body.style.overflow = 'hidden';
 

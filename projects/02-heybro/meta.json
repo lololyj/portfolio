@@ -8,8 +8,9 @@
   "accent": "#f97316",
   "accent2": "#fbbf24",
   "thumbnail": "1.png",
-  "slides": ["2.png", "3.png", "4.png", "5.png", "6.png", "7.webp", "8.webp", "9.png", "10.png", "11.webp"],
+  "slides": ["2.png", "3.png", "4.png", "5.png", "6.png", "7.webp", "8.webp", "9.png", "10.png", "11.webp","12.png", "13.png"],
   "vimeo": "https://vimeo.com/1122567162",
-"videoPosition": "bottom"
+  "videoPosition": "bottom",
+  "appStoreLink": "https://apps.apple.com/kr/app/heybro/id6752788217"
 }
  
