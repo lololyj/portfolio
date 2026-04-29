@@ -248,7 +248,7 @@ function openProjectModal(proj) {
       ${thumbHtml}
       <div class="modal-tags">${tagsHtml}</div>
       <h2 class="modal-title">${proj.title}</h2>
-      <p class="modal-summary">${proj.summary || ''}</p>
+      <p class="modal-summary">${(proj.summary || '').replace(/\n/g, '<br>')}</p>
       <div class="modal-meta-grid">
         <div class="modal-meta-cell"><span class="meta-label">Year</span><span class="meta-val">${proj.year}</span></div>
         <div class="modal-meta-cell"><span class="meta-label">Role</span><span class="meta-val">${proj.role}</span></div>
